@@ -1,2 +1,2 @@
-# Lustra_GyverLamp2
+# Lustra
 Добавление в проект Алекса GyverLamp2 трёх белых светодиодных лент для люсты + mqtt.
