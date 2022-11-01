@@ -118,7 +118,7 @@ String (dataz);
 #include "Clap.h"         // обработка хлопков
 // add
 #include <ESP8266WebServer.h>
-//#include <ESP8266SSDP.h>
+#include <ESP8266SSDP.h>
 #include <PubSubClient.h>
 // ------------------- ДАТА --------------------
 //mqttConfTopic cfgTop;
@@ -146,6 +146,8 @@ WiFiClient ESPclient;
 PubSubClient mqtt_client(ESPclient);
 // add ota
 const char* serverIndex = "<form method='POST' action='/update' enctype='multipart/form-data'><input type='file' name='update1'><input type='submit' value='Update'></form>";
+// SSDP
+String SSDP_Name = cfg.mqttID; // Имя SSDP. Для обнаружения с компьютера через "сеть". Меняется в приложении, настройки MQTT, ID
 
 uint16_t portNum;
 uint32_t udpTmr = 0, gotADCtmr = 0;
@@ -186,6 +188,7 @@ if (cfg.WiFimode) {     // mqtt
 //    mqtt_setup();    
 //  #endif
 }
+  SSDP_init();          /// запускаем SSDP интерфейс
 #endif
   setupOTA();           // OTA
   setupADC();           // настраиваем анализ
