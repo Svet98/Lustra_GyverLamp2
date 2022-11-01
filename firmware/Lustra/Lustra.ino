@@ -8,6 +8,16 @@
   ESP core 2.7.4+ http://arduino.esp8266.com/stable/package_esp8266com_index.json
   FastLED 3.4.0+ https://github.com/FastLED/FastLED/releases
 */
+/*
+  Версия 0.23b.02 by Svetлая www.v-elite.ru
+  На основе версии 0.23b создано новое ответвление для использования в люстрах.
+  Внимание! В оригинальной версии Алекса mqtt отсутствует!
+  - добавлен протокол mqtt для управления белыми лед лентами и основными функциями GyverLamp2
+  - mqtt сообщает состояние устройства в сети, LWT
+  - добавлена ОТА с веб, http://ip
+  - SSDP
+  Среда разработки Arduino IDE 2.0.0
+*/
 
 /*
   Версия 0.23b
