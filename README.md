@@ -15,3 +15,5 @@
 MQTT</b>, добавлено (для отправки mqtt id/cmd/тема):
 
 ![image](https://user-images.githubusercontent.com/35732065/199292474-8662f5e3-4a14-426e-81f9-fad724c4b6d8.png)
+<br>
+<b>SSDP</b> добавлено отображение устройства в сети.<br>
