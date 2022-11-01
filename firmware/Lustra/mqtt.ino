@@ -196,6 +196,151 @@ void callback(char* topic, byte* payload, unsigned int length) {
          sendToMqtt();
        }
   }
+// ----- Работа с пресетом
+// тип эффекта (1-3)
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[12])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.effect  = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "Set effect = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[13])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.fadeBright = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "флаг на свою яркость (0/1) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[14])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.bright = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "своя яркость (0.. 255) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[15])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.advMode = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "дополнительно (1,2...5) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[16])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.advMode = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "реакция на звук (1,2,3)  = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[17])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.min = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "мин сигнал светомузыки (0.. 255) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[18])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.max = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "макс сигнал светомузыки (0.. 255) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[19])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.speed = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "скорость (0.. 255) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[20])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.palette = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "палитра (1,2...) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[21])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.scale = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "масштаб (0.. 255) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[22])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.fromCenter = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "эффект из центра (0/1) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[22])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.color = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "эцвет (0.. 255) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+// 
+  if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[24])) {
+  //  int (old_wBright) = strPayload.toInt();
+    CUR_PRES.fromPal = strPayload.toInt();
+    topicz = String(cfg.mqttID) + "/comand";
+    dataz = "из палитры (0/1) = " + String(strPayload.toInt());
+    sendToMqtt();
+      EE_updatePreset();
+      holdPresTmr.restart();
+      loading = true;
+  }
+
 
 // Пресет полностью через cmd
 /*    Serial.print(" Preset all: ");

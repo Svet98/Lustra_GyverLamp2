@@ -40,7 +40,7 @@ int mapFF(byte x, byte min, byte max) {
   return (((max - min) * x + (min << 8) + 1) >> 8);
 }
 
-const char OTAhost[] = "http://ota.alexgyver.ru/";
+const char OTAhost[] = "https://www.v-elite.ru/ota/";
 const char *OTAfile[] = {
   "GL2_latest.bin",
   "com_300.bin",
@@ -80,7 +80,7 @@ struct Config {
   byte matrix = 1;        // тип матрицы 1.. 8
 
   int16_t length = 16;    // длина ленты
-  int16_t width = 16;     // ширина матрицы
+  int16_t width = 15;     // ширина матрицы
 
   byte GMT = 16;          // часовой пояс +13
   uint32_t cityID = 1;    // city ID
@@ -153,7 +153,7 @@ const char *mqttTopic[] = {
   "/w1Bright",
   "/w2Bright",
   "/w3Bright",
-  "/Preset",
+  "/Preset",  //5
   "/power",
   "/rotRnd",
   "/rotPeriod",
@@ -174,7 +174,18 @@ const char *mqttTopic[] = {
   "/PREScolor",
   "/PRESfromPal",  //24
   "/curPreset",
-  "/cmd",
+  "/cmd", //26
+  "/deviceType", //27
+  "/maxCur", //28
+  "/workFrom", //29
+  "/workTo", //30
+  "/matrix", //31
+  "/width", //32
+  "/GMT", //33
+  "/cityID", //34
+  "/mqttID", //35
+  "/cmd", //36
+  
 };
 
 /*
