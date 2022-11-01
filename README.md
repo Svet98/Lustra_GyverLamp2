@@ -11,16 +11,18 @@
 - mqtt
 - ОТА через web (http://ip)
 - интеграция в MajorDoMo
-
-## 01.10.2022<br>
+<br><br>
+<b>...  изменения</b>
+<details>
+<summary> 01.10.2022</summary><br>
   - MQTT</b>, добавлено (для отправки mqtt id/cmd/тема):
 
 ![image](https://user-images.githubusercontent.com/35732065/199292474-8662f5e3-4a14-426e-81f9-fad724c4b6d8.png)
 <br>
   - <b>SSDP</b> добавлено отображение устройства в сети.<br>
 ![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/ssdp.png?raw=true)
+</details>
 
-<br>
 <details>
 <summary>30.09.2022...</summary>
   - [x] добавлен протокол mqtt для управления белыми лед лентами и основными функциями GyverLamp2 <br>
