@@ -14,7 +14,7 @@
 <br><br>
 <b>...  изменения</b>
 <details>
-<summary> 01.10.2022</summary><br>
+<summary> 01.11.2022</summary><br>
   - MQTT</b>, добавлено (для отправки mqtt id/cmd/тема):
 
 ![image](https://user-images.githubusercontent.com/35732065/199292474-8662f5e3-4a14-426e-81f9-fad724c4b6d8.png)
@@ -24,7 +24,7 @@
 </details>
 
 <details>
-<summary>30.09.2022...</summary>
+<summary>30.10.2022...</summary>
   - [x] добавлен протокол mqtt для управления белыми лед лентами и основными функциями GyverLamp2 <br>
   - [x] mqtt сообщаяет состояние устройства в сети, LWT
 
