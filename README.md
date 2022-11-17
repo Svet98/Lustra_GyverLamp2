@@ -12,11 +12,11 @@
 - ОТА через web (http://ip)
 - интеграция в MajorDoMo
 <br><br>
-<b>...  изменения</b>
+<b>...  изменения ...</b>
 <details>
-<summary>17.11.2022...</summary>
+<summary>17.11.2022</summary>
   - [x] добавлена сцена управления для МажорДоМо <br>
-![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.jpg?raw=true)
+![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.png?raw=true)
 </details> 
 
 <details>
