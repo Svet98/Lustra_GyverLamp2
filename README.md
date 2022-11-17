@@ -16,7 +16,8 @@
 <details>
 <summary>17.11.2022</summary>
   - [x] добавлена сцена управления для МажорДоМо <br>
-![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.png?raw=true)
+
+![Alt-текст](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.png?raw=true "сцена управления")
 </details> 
 
 <details>
