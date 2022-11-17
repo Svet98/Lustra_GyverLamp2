@@ -14,6 +14,12 @@
 <br><br>
 <b>...  изменения</b>
 <details>
+<summary>17.11.2022...</summary>
+  - [x] добавлена сцена управления для МажорДоМо <br>
+![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.jpg?raw=true)
+</details> 
+
+<details>
 <summary> 01.11.2022</summary><br>
   - MQTT</b>, добавлено (для отправки mqtt id/cmd/тема):
 
