@@ -198,7 +198,7 @@ if (cfg.WiFimode) {     // mqtt
 //    mqtt_setup();    
 //  #endif
 }
-  SSDP_init();          /// запускаем SSDP интерфейс
+  SSDP_init ();          // / запускаем SSDP интерфейс
 #endif
   setupOTA();           // OTA
   setupADC();           // настраиваем анализ
