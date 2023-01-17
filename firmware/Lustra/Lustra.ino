@@ -198,7 +198,7 @@ if (cfg.WiFimode) {     // mqtt
 //    mqtt_setup();    
 //  #endif
 }
-  SSDP_init ();          // / запускаем SSDP интерфейс
+  SSDP_init();          /// запускаем SSDP интерфейс
 #endif
   setupOTA();           // OTA
   setupADC();           // настраиваем анализ
@@ -220,6 +220,9 @@ void loop() {
       DEBUG("loop mqtt reconnect = ");
       DEBUGLN(!mqtt_client.connected());
       reconnect();
+    // отправка значений в mqtt
+    mqttSendData();
+     
     }
   }
   if (mqtt_client.connected()) {

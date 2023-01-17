@@ -127,6 +127,10 @@ void parsing() {
             FOR_i(0, PRES_SIZE) {
               *((byte*)&preset + j * PRES_SIZE + i) = data[j * PRES_SIZE + i + 3]; // загоняем в структуру
             }
+
+
+
+
           }
           //if (!cfg.rotation) setPreset(data[cfg.presetAmount * PRES_SIZE + 3] - 1);
           byte dataStart = cfg.presetAmount * PRES_SIZE + 3;
@@ -137,6 +141,7 @@ void parsing() {
           //presetRotation(true); // форсировать смену режима
           holdPresTmr.restart();
           loading = true;
+          viewPreset();
         }
         break;
 

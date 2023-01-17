@@ -1,4 +1,4 @@
-/*
+
 void SSDP_init(void) {
   // SSDP дескриптор
   server.on("/description.xml", HTTP_GET, []() {
@@ -12,12 +12,12 @@ void SSDP_init(void) {
   SSDP.setSerialNumber(ESP.getChipId());
   SSDP.setURL("/");
   SSDP.setModelName("FireLamp2 Lustra");
-  SSDP.setModelNumber("0.23.02b");
- // SSDP.setModelURL("https://alexgyver.ru/gyverlamp/");
-  SSDP.setManufacturer("Svetlaya");
+  SSDP.setModelNumber("0.23b.03");
+  SSDP.setModelURL("https://github.com/Svet98/Lustra_GyverLamp2");
+  SSDP.setManufacturer("Svetлая");
   SSDP.setManufacturerURL("https://www.v-elite.ru");
   SSDP.begin();
-}*/
+}
 void setupOTA() {
   if (WiFi.waitForConnectResult() == WL_CONNECTED) {
 //    MDNS.begin(AP_NameChar);

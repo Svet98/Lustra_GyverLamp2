@@ -89,29 +89,34 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[2])) {     //если получили с нужного топика
     int (old_wBright) = cfg.led_w1Bright;      // сохраняем текущую яркость перед получением нового значения
     cfg.led_w1Bright = strPayload.toInt();
+    cfg.led_w1Bright = cfg.led_w1Bright * 2.5;
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "Bright w1: " + String(old_wBright) + " -> " + String(cfg.led_w1Bright);
     led_white_fading(old_wBright, LED_PIN_W1, cfg.led_w1Bright);  // старая яркость, порт white ленты, полученная яркость
     sendToMqtt();
+    EE_updCfg();
   }
 // яркость белой LED №2
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[3])) {
     int (old_wBright) = cfg.led_w2Bright;
     cfg.led_w2Bright = strPayload.toInt();
+    cfg.led_w2Bright = cfg.led_w2Bright * 2.5;
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "Bright w2: " + String(old_wBright) + " -> " + String(cfg.led_w2Bright);
     led_white_fading(old_wBright, LED_PIN_W2, cfg.led_w2Bright);
     sendToMqtt();
-
+    EE_updCfg();
   }
 // яркость белой LED №3
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[4])) {
     int (old_wBright) = cfg.led_w3Bright;
     cfg.led_w3Bright = strPayload.toInt();
+    cfg.led_w3Bright = cfg.led_w3Bright * 2.5;
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "Bright w3: " + String(old_wBright) + " -> " + String(cfg.led_w3Bright);
     led_white_fading(old_wBright, LED_PIN_W3, cfg.led_w3Bright);  // старая яркость, порт white ленты, полученная яркость
     sendToMqtt();
+    EE_updCfg();
   }
 // RGB on/off
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[6])) {
@@ -353,7 +358,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     mqtt_client.publish("lustra_zal/comand", " Preset all: ");
 */  
 
-
+checkEEupdate();  //save EEPROM
 }
 
 // плавное гашение и розжиг white_led
@@ -478,13 +483,13 @@ void mqttSendData() {
   dataz = String (cfg.led_speed);
   topicz = String(cfg.mqttID) + String(mqttTopic[1]);
       sendToMqtt();
-  dataz = String (cfg.led_w1Bright);
+  dataz = String (cfg.led_w1Bright / 2.5);
   topicz = String(cfg.mqttID) + String(mqttTopic[2]);
       sendToMqtt();
-  dataz = String (cfg.led_w2Bright);
+  dataz = String (cfg.led_w2Bright / 2.5);
   topicz = String(cfg.mqttID) + String(mqttTopic[3]);
       sendToMqtt();
-  dataz = String (cfg.led_w3Bright);
+  dataz = String (cfg.led_w3Bright / 2.5);
   topicz = String(cfg.mqttID) + String(mqttTopic[4]);
       sendToMqtt();
   dataz = String (cfg.state);
@@ -505,11 +510,11 @@ void mqttSendData() {
   dataz = String (cfg.bright);
   topicz = String(cfg.mqttID) + String(mqttTopic[11]);
       sendToMqtt();
-/*  dataz = String (cfg.);
-  topicz = String(cfg.mqttID) + String(mqttTopic[]);
+  dataz = String (cfg.workFrom);
+  topicz = String(cfg.mqttID) + String(mqttTopic[29]);
       sendToMqtt();
-  dataz = String (cfg.);
-  topicz = String(cfg.mqttID) + String(mqttTopic[]);
+  dataz = String (cfg.workTo);
+  topicz = String(cfg.mqttID) + String(mqttTopic[30]);
       sendToMqtt();
-*/  
+  
 }

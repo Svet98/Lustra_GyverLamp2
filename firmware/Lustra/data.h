@@ -42,7 +42,7 @@ int mapFF(byte x, byte min, byte max) {
 
 const char OTAhost[] = "https://www.v-elite.ru/ota/";
 const char *OTAfile[] = {
-  "GL2_latest.bin",
+  "Lustra_latest.bin",
   "com_300.bin",
   "com_900.bin",
   "esp1_300.bin",
@@ -107,8 +107,8 @@ struct Config {
   int8_t curPreset = 0;   // текущий режим
   int16_t minLight = 0;   // мин освещённость
   int16_t maxLight = 1023;// макс освещённость
-  char ssid[32] = ;          // логин wifi
-  char pass[32] = ;          // пароль wifi
+  char ssid[32];          // логин wifi
+  char pass[32];          // пароль wifi
   byte version = GL_VERSION;
   byte update = 0;
 };
