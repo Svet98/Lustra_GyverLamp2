@@ -84,6 +84,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 //    DEBUGLN("#######");
     dataz = " Скорость w_led: " + String(cfg.led_speed);
     sendToMqtt();
+    EE_updateCfg();
   }
 // яркость белой LED №1 
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[2])) {     //если получили с нужного топика
@@ -94,7 +95,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
     dataz = "Bright w1: " + String(old_wBright) + " -> " + String(cfg.led_w1Bright);
     led_white_fading(old_wBright, LED_PIN_W1, cfg.led_w1Bright);  // старая яркость, порт white ленты, полученная яркость
     sendToMqtt();
-    EE_updCfg();
+//    EE_updCfg();
+    EE_updateCfg();
   }
 // яркость белой LED №2
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[3])) {
@@ -105,7 +107,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
     dataz = "Bright w2: " + String(old_wBright) + " -> " + String(cfg.led_w2Bright);
     led_white_fading(old_wBright, LED_PIN_W2, cfg.led_w2Bright);
     sendToMqtt();
-    EE_updCfg();
+//    EE_updCfg();
+    EE_updateCfg();
   }
 // яркость белой LED №3
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[4])) {
@@ -116,7 +119,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
     dataz = "Bright w3: " + String(old_wBright) + " -> " + String(cfg.led_w3Bright);
     led_white_fading(old_wBright, LED_PIN_W3, cfg.led_w3Bright);  // старая яркость, порт white ленты, полученная яркость
     sendToMqtt();
-    EE_updCfg();
+//    EE_updCfg();
+    EE_updateCfg();
   }
 // RGB on/off
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[6])) {
@@ -132,6 +136,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
         }
     topicz = String(cfg.mqttID) + "/comand";
     sendToMqtt();
+    EE_updateCfg();
   } 
 // Пресет
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[5])) {
@@ -140,6 +145,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "Set  Preset: " + String(strPayload.toInt());
     sendToMqtt();
+    EE_updateCfg();
   }
 // тип автосмены: 0 по порядку, 1 рандом
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[7])) {
@@ -148,6 +154,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "тип автосмены: 0 по порядку, 1 рандом: " + String(strPayload.toInt());
     sendToMqtt();
+    EE_updateCfg();
   }
 // время смены пресета (1,5..)
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[8])) {
@@ -156,6 +163,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "время смены пресета: " + String(strPayload.toInt());
     sendToMqtt();
+    EE_updateCfg();
   }
 // смена пресетов: 0 ручная, 1 авто
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[9])) {
@@ -164,6 +172,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "смена пресетов: 0 ручная, 1 авто: " + String(strPayload.toInt());
     sendToMqtt();
+    EE_updateCfg();
   }
 // режим ацп (1 выкл, 2 ярк, 3 муз)
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[10])) {
@@ -172,6 +181,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "режим ацп (1 выкл, 2 ярк, 3 муз): " + String(strPayload.toInt());
     sendToMqtt();
+    EE_updateCfg();
   }
 // глобальная яркость
   if (strTopic == String(cfg.mqttID) + "/cmd" + String(mqttTopic[11])) {
@@ -180,6 +190,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     topicz = String(cfg.mqttID) + "/comand";
     dataz = "Set bright = " + String(strPayload.toInt());
     sendToMqtt();
+    EE_updateCfg();
   }
 // cmd  -- запрос данных
 // -- 
@@ -188,6 +199,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
      int old_wBright = strPayload.toInt();
        if (old_wBright == 55) {
          mqttSendData();
+         EE_updateCfg();         
        }
   }
 // cmd  -- записать данные
@@ -196,6 +208,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
      int old_wBright = strPayload.toInt();
        if (old_wBright == 77) {
          EE_updCfg();
+         EE_updateCfg();
          topicz = String(cfg.mqttID) + "/comand";
          dataz = "Set Save cfg";
          sendToMqtt();
@@ -389,6 +402,7 @@ void led_white_fading(int old_wBright, int LED_PIN, int new_wBright){
         DEBUGLN(LED_PIN);
     }
   }
+  EE_updateCfg();
 }
 void viewPreset() {
 //#include "data.h"         // данные

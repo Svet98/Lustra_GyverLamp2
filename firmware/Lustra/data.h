@@ -85,8 +85,8 @@ struct Config {
   byte GMT = 16;          // часовой пояс +13
   uint32_t cityID = 1;    // city ID
   bool mqtt = 1;          // mqtt
-  char mqttID[32] = "lustra_zal";        //
-  char mqttHost[32] = "192.168.1.11";      //
+  char mqttID[32];        //
+  char mqttHost[32];      //
   int mqttPort = 1883;       //
   char mqttLogin[16];     //
   char mqttPass[16];      //

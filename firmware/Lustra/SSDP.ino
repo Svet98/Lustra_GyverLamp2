@@ -15,7 +15,7 @@ void SSDP_init(void) {
   SSDP.setModelNumber("0.23b.03");
   SSDP.setModelURL("https://github.com/Svet98/Lustra_GyverLamp2");
   SSDP.setManufacturer("Svetлая");
-  SSDP.setManufacturerURL("https://www.v-elite.ru");
+  SSDP.setManufacturerURL("https://www.v-elite.ru/Lustra_GyverLamp2");
   SSDP.begin();
 }
 void setupOTA() {
