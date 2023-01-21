@@ -88,6 +88,9 @@ struct Config {
   char mqttID[32];        //
   char mqttHost[32];      //
   int mqttPort = 1883;       //
+  char mqttID[32] = "lustra_zal";        //
+  char mqttHost[32] = "192.168.1.11";      //
+  int mqttPort = 1883;       //
   char mqttLogin[16];     //
   char mqttPass[16];      //
 
@@ -107,8 +110,8 @@ struct Config {
   int8_t curPreset = 0;   // текущий режим
   int16_t minLight = 0;   // мин освещённость
   int16_t maxLight = 1023;// макс освещённость
-  char ssid[32];          // логин wifi
-  char pass[32];          // пароль wifi
+  char ssid[32] = "v-elite";          // логин wifi
+  char pass[32] = "ryzpm-98";          // пароль wifi
   byte version = GL_VERSION;
   byte update = 0;
 };
