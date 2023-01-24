@@ -7,6 +7,9 @@
 :black_square_button: видео интеграции в МажорДоМо
 [![ ](https://github.com/Svet98/MajorDoMo-R4S-teapot/blob/main/jpg/yt_logo_rgb_light.png?raw=true)](https://www.youtube.com/svet740)
 <br>
+✅ Shorts
+[![ ](https://github.com/Svet98/MajorDoMo-R4S-teapot/blob/main/jpg/yt_logo_rgb_light.png?raw=true)](https://www.youtube.com/shorts/tZTlQFJJrP4)
+<br>
 
 - добавление трёх белых светодиодных 12v. лент
 - mqtt
