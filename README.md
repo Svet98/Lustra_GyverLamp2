@@ -1,3 +1,4 @@
+![](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/LustraGiverLamp.png?raw=true)
 # Люстра GyverLamp2
 Люстра на основе [проекта Алекса GyverLamp2.](https://github.com/AlexGyver/GyverLamp2)
 <br>
