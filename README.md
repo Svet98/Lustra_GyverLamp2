@@ -1,10 +1,14 @@
-# Люстра GyverLamp2
+![](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/LustraGiverLamp.png?raw=true)
+# 
 Люстра на основе [проекта Алекса GyverLamp2.](https://github.com/AlexGyver/GyverLamp2)
 <br>
-![https://github.com/Svet98/Lustra_GyverLamp2](https://img.shields.io/badge/%D0%B2%20%D0%B2%D0%B5%D1%87%D0%BD%D0%BE%D0%B9-%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5-orange) ![https://github.com/Svet98/Lustra_GyverLamp2](https://img.shields.io/badge/Realese-No-yelow) ![https://github.com/Svet98/Lustra_GyverLamp2](https://img.shields.io/badge/ver-0.23b.2-blue)
+![https://github.com/Svet98/Lustra_GyverLamp2](https://img.shields.io/badge/%D0%B2%20%D0%B2%D0%B5%D1%87%D0%BD%D0%BE%D0%B9-%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5-orange) ![https://github.com/Svet98/Lustra_GyverLamp2](https://img.shields.io/badge/Realese-No-yelow) ![https://github.com/Svet98/Lustra_GyverLamp2](https://img.shields.io/badge/ver-0.23b.3-blue)
 <br>
 :black_square_button: видео интеграции в МажорДоМо
 [![ ](https://github.com/Svet98/MajorDoMo-R4S-teapot/blob/main/jpg/yt_logo_rgb_light.png?raw=true)](https://www.youtube.com/svet740)
+<br>
+✅ Shorts
+[![ ](https://github.com/Svet98/MajorDoMo-R4S-teapot/blob/main/jpg/yt_logo_rgb_light.png?raw=true)](https://www.youtube.com/shorts/tZTlQFJJrP4)
 <br>
 
 - добавление трёх белых светодиодных 12v. лент
@@ -28,6 +32,7 @@
 
 <details>
 <summary>17.11.2022</summary>
+
   - [x] добавлена сцена управления для МажорДоМо <br>
 
 ![Alt-текст](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.png?raw=true "сцена управления")
@@ -35,11 +40,12 @@
 
 <details>
 <summary> 01.11.2022</summary><br>
-  - MQTT</b>, добавлено (для отправки mqtt id/cmd/тема):
+
+- [x] MQTT</b>, добавлено (для отправки mqtt id/cmd/тема):
 
 ![image](https://user-images.githubusercontent.com/35732065/199292474-8662f5e3-4a14-426e-81f9-fad724c4b6d8.png)
 <br>
-  - <b>SSDP</b> добавлено отображение устройства в сети.<br>
+- [x] <b>SSDP</b> добавлено отображение устройства в сети.<br>
 ![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/ssdp.png?raw=true)
 </details>
 
