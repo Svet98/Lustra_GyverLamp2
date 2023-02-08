@@ -36,6 +36,9 @@
   - [x] добавлена сцена управления для МажорДоМо <br>
 
 ![Alt-текст](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra.png?raw=true "сцена управления")
+<br>
+![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/lustra02.png?raw=true)
+<br>
 </details> 
 
 <details>
@@ -45,6 +48,7 @@
 
 ![image](https://user-images.githubusercontent.com/35732065/199292474-8662f5e3-4a14-426e-81f9-fad724c4b6d8.png)
 <br>
+
 - [x] <b>SSDP</b> добавлено отображение устройства в сети.<br>
 ![image](https://github.com/Svet98/Lustra_GyverLamp2/blob/main/docs/ssdp.png?raw=true)
 </details>
